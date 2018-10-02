@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client-side Templating</title>
+</head>
+<template id="resturant-template">
+  {{#each rests.data}}
+    <div class ="repo">
+    <p>Name: {{name}}</p>
+    <p>Location: {{location}}</p>
+    <p>OwnedBy: {{ownedBy}}</p>
+    <p>yelpPage: <a href="{{yelpPage}}">Check us out on Yelp </a> </p>
+    {{#if acceptsApplePay}}
+    <p>Apple Pay:<span><img src="apple.png" align="center" alt ="apple" height="35" width="35"></span></p>
+    {{else}}
+    <p>Apple pay: No Apple Pay</p>
+    {{/if}}
+
+    </div>
+  {{/each}}
+</template>
+<body>
+<div id="results"></div>
+
+
+<script src="jquery-3.3.1.js"></script>
+<script src="handlebars-v4.0.11.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
